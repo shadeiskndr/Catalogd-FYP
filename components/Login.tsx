@@ -30,7 +30,7 @@ const Login = () => {
     try {
       account.createOAuth2Session(
         "discord",
-        "https://pixelpaws.vercel.app/dashboard"
+        "https://catalogd-fyp.vercel.app/dashboard"
       )
     } catch (error) {
       console.error("OAuth login error:", error);
@@ -93,7 +93,7 @@ const Login = () => {
     try {
       await account.createRecovery(
         userDetails.email,
-        "https://pixelpaws.vercel.app/resetPass"
+        "http://catalogd-fyp.vercel.app/resetPass"
       );
       toast.success("Please check your email for password reset instructions.");
     } catch (AppwriteException: any) {

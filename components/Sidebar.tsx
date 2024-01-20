@@ -157,13 +157,13 @@ const Sidebar = () => {
               Discover
             </h1>
           </Link>
-          <h2>&</h2>
+          <h2>Your</h2>
           <Link href="" target="_blank">
             <h1
               className="text-gray-600 hover:text-red-500 transition
             duration-300 hover:scale-105 cursor-pointer"
             >
-              Catalog Games
+              Games
             </h1>
           </Link>
         </div>
