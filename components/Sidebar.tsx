@@ -149,21 +149,21 @@ const Sidebar = () => {
           Catalogd
         </h1>
         <div className="text-xs text-gray-600 flex space-x-1">
-          <Link href="https://rawg.io/" target="_blank">
+          <Link href="" target="_blank">
             <h1
               className="text-gray-600 hover:text-gray-100 transition
             duration-300 hover:scale-105 cursor-pointer"
             >
-              RAWG
+              Discover
             </h1>
           </Link>
-          <h2>x</h2>
-          <Link href="https://appwrite.io/" target="_blank">
+          <h2>&</h2>
+          <Link href="" target="_blank">
             <h1
               className="text-gray-600 hover:text-red-500 transition
             duration-300 hover:scale-105 cursor-pointer"
             >
-              Appwrite
+              Catalog Games
             </h1>
           </Link>
         </div>
