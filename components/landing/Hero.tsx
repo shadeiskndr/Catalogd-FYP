@@ -18,7 +18,7 @@ const Hero = () => {
                 font-semibold  text-indigo-200 drop-shadow-lg
                 hidden md:block"
         >
-          All your
+          Discover and share all your
           <span className=""> favourite games </span>
           in one place!
         </h2>
@@ -32,7 +32,7 @@ const Hero = () => {
           className="text-[1.5rem] md:text-[2rem] lg:text-[3rem]
                 font-semibold  text-indigo-200 drop-shadow-lg px-5"
         >
-          All your
+          Discover and share all your
           <span className=""> favourite games </span>
           in one place!
         </h2>
