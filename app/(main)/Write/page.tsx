@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, ChangeEvent, useEffect } from "react";
+import React, { useState, ChangeEvent, useEffect, useRef } from "react";
 import { Search } from "@/rawg/search";
 import { Game } from "@/gameTypes";
 import { database, databaseId, reviewCol, getSessionData, userID } from "@/utils/appwrite";
-import { ID } from "appwrite";
+import { ID, Query } from "appwrite";
 import { toast } from "react-hot-toast";
 import Image from "next/image";
 import placeholderImg from "@/public/imgs/imgPlaceholder.jpg"; // Adjust the path if necessary
@@ -24,17 +24,7 @@ const WriteReview = () => {
   const [rating, setRating] = useState<number>(0);
   const [review, setReview] = useState<string>("");
   const [userName, setUserName] = useState<string>("");
-
-  useEffect(() => {
-    const fetchGames = async () => {
-      if (searchTerm) {
-        const response = await Search({ term: searchTerm });
-        setSearchedGames(response.results);
-      }
-    };
-
-    fetchGames();
-  }, [searchTerm]);
+  const searchTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const fetchUserName = async () => {
@@ -50,6 +40,33 @@ const WriteReview = () => {
 
     fetchUserName();
   }, []);
+
+  useEffect(() => {
+    const fetchGames = async (term: string) => {
+      if (term) {
+        const response = await Search({ term });
+        setSearchedGames(response.results);
+      }
+    };
+
+    if (searchTimeout.current) {
+      clearTimeout(searchTimeout.current);
+    }
+
+    if (searchTerm.trim() !== "" && searchTerm.length > 2) {
+      searchTimeout.current = setTimeout(() => {
+        fetchGames(searchTerm);
+      }, 300); // Adjust the delay duration as needed (e.g., 300ms)
+    } else {
+      setSearchedGames([]);
+    }
+
+    return () => {
+      if (searchTimeout.current) {
+        clearTimeout(searchTimeout.current);
+      }
+    };
+  }, [searchTerm]);
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
@@ -77,16 +94,31 @@ const WriteReview = () => {
       return;
     }
 
-    const reviewData: ReviewFormProps = {
-      collection: reviewCol,
-      gameId: selectedGame.id,
-      gameName: selectedGame.name,
-      gameReview: review,
-      gameRating: rating,
-      userName: userName,
-    };
-
     try {
+      // Check if the user has already written a review for the selected game
+      const existingReviews = await database.listDocuments(
+        databaseId,
+        reviewCol,
+        [
+          Query.equal("user_id", userID),
+          Query.equal("game_id", selectedGame.id),
+        ]
+      );
+
+      if (existingReviews.total > 0) {
+        toast.error("You have already written a review for this game.");
+        return;
+      }
+
+      const reviewData: ReviewFormProps = {
+        collection: reviewCol,
+        gameId: selectedGame.id,
+        gameName: selectedGame.name,
+        gameReview: review,
+        gameRating: rating,
+        userName: userName,
+      };
+
       const createPromise = database.createDocument(
         `${databaseId}`,
         `${reviewData.collection}`,
