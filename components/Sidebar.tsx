@@ -8,6 +8,8 @@ import {
   SparklesIcon,
   HomeIcon,
   HeartIcon,
+  PencilIcon,
+  BookOpenIcon,
 } from "@heroicons/react/24/solid";
 import { SidebarContext } from "@/utils/SidebarContext";
 import SeachBar from "./SeachBar";
@@ -58,7 +60,12 @@ const Sidebar = () => {
         </div>
         <div className="">
           <SideButton name="Write Review" path="/Write">
-            <FireIcon className="w-6 h-6" />
+            <PencilIcon className="w-6 h-6" />
+          </SideButton>
+        </div>
+        <div className="">
+          <SideButton name="Reviews" path="/Review">
+            <BookOpenIcon className="w-6 h-6" />
           </SideButton>
         </div>
       </nav>
@@ -106,7 +113,12 @@ const Sidebar = () => {
           </div>
           <div className="">
             <SideButton name="Write Review" path="/Write">
-              <FireIcon className="w-6 h-6" />
+              <PencilIcon className="w-6 h-6" />
+            </SideButton>
+          </div>
+          <div className="">
+            <SideButton name="Reviews" path="/Review">
+              <BookOpenIcon className="w-6 h-6" />
             </SideButton>
           </div>
         </div>
