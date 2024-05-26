@@ -21,7 +21,7 @@ const WriteReview = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [searchedGames, setSearchedGames] = useState<Game[]>([]);
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
-  const [rating, setRating] = useState<number>(0);
+  const [rating, setRating] = useState<number>(5); // Default rating set to 5
   const [review, setReview] = useState<string>("");
   const [userName, setUserName] = useState<string>("");
   const searchTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -137,7 +137,7 @@ const WriteReview = () => {
       console.log("Review submitted successfully:", response);
       toast.success("Review submitted successfully!");
       setSelectedGame(null);
-      setRating(0);
+      setRating(5); // Reset rating to default value
       setReview("");
     } catch (error) {
       console.error("Error submitting review:", error);
@@ -184,14 +184,16 @@ const WriteReview = () => {
             <div className="mb-4">
               <label className="block mb-1">Rating (1-10):</label>
               <input
-                type="number"
+                type="range"
                 value={rating}
                 onChange={handleRatingChange}
                 min="1"
                 max="10"
+                step="1"
                 required
-                className="w-full p-2 bg-gray-600 text-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
+                className="w-full"
               />
+              <div className="text-center mt-2">{rating}</div>
             </div>
             <div className="mb-4">
               <label className="block mb-1">Review:</label>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaStar } from 'react-icons/fa';
 
 type ReviewCardProps = {
   userName: string;
@@ -22,14 +23,15 @@ const ReviewCardSlug = ({ userName, rating, reviewText }: ReviewCardProps) => {
   };
 
   return (
-    <div className="bg-gray-800 p-4 rounded-lg shadow-md flex justify-between items-start">
-      <div>
-        <h2 className="text-xl font-bold text-white">{getReviewTitle(rating)}</h2>
-        <p className="text-gray-400">{userName}</p>
+    <div className="bg-gray-800 p-4 rounded-lg shadow-md flex flex-col md:flex-row justify-between items-start md:items-center hover:scale-105 transition-all duration-300 ease-in-out">
+      <div className="flex-1">
+        <h2 className="text-xl font-bold text-white">{userName}</h2>
+        <p className="text-gray-400">{getReviewTitle(rating)}</p>
         <p className="text-gray-300 mt-2">{reviewText}</p>
       </div>
-      <div className={`text-xl font-bold ${getRatingColor(rating)}`}>
-        {rating} <span className="mr-1">⭐</span>
+      <div className="mt-4 md:mt-0 flex items-center text-xl font-bold">
+        <span className={`mr-1 ${getRatingColor(rating)}`}>{rating}</span>
+          <FaStar className={getRatingColor(rating)} />
       </div>
     </div>
   );
