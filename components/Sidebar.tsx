@@ -56,6 +56,11 @@ const Sidebar = () => {
             <IoGameController className="w-6 h-6" />
           </SideButton>
         </div>
+        <div className="">
+          <SideButton name="Test My Lib" path="/TestMyLib">
+            <FireIcon className="w-6 h-6" />
+          </SideButton>
+        </div>
       </nav>
 
       {/* mobile nav  */}
@@ -97,6 +102,11 @@ const Sidebar = () => {
           <div className="">
             <SideButton name="Genres" path="/genres">
               <IoGameController className="w-6 h-6" />
+            </SideButton>
+          </div>
+          <div className="">
+            <SideButton name="Test My Lib" path="/TestMyLib">
+              <FireIcon className="w-6 h-6" />
             </SideButton>
           </div>
         </div>

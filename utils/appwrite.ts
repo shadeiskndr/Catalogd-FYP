@@ -20,6 +20,8 @@ export const userdataCol =
 export const mylibCol = process.env.NEXT_PUBLIC_APPWRITE_MYLIB_COLLECTION!;
 export const wishlistCol =
   process.env.NEXT_PUBLIC_APPWRITE_WISHLIST_COLLECTION!;
+export const reviewCol =
+  process.env.NEXT_PUBLIC_APPWRITE_REVIEW_COLLECTION!;
 export let userID: string;
 
 
