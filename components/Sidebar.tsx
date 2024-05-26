@@ -57,7 +57,7 @@ const Sidebar = () => {
           </SideButton>
         </div>
         <div className="">
-          <SideButton name="Test My Lib" path="/TestMyLib">
+          <SideButton name="Write Review" path="/Write">
             <FireIcon className="w-6 h-6" />
           </SideButton>
         </div>
@@ -105,7 +105,7 @@ const Sidebar = () => {
             </SideButton>
           </div>
           <div className="">
-            <SideButton name="Test My Lib" path="/TestMyLib">
+            <SideButton name="Write Review" path="/Write">
               <FireIcon className="w-6 h-6" />
             </SideButton>
           </div>
