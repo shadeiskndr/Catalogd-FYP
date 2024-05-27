@@ -26,7 +26,7 @@ const Login = () => {
   const [isPasswordReset, setIsPasswordReset] = useState(false);
 
   //For discord OAuth //appwrite side problems with oAuth. hold until fix
-/*   const oAuthLogin = () => {
+   const oAuthLogin = () => {
     try {
       account.createOAuth2Session(
         "discord",
@@ -35,7 +35,7 @@ const Login = () => {
     } catch (error) {
       console.error("OAuth login error:", error);
     }
-  }; */
+  }; 
 
   // For standard email login
   const loginUser = async (e: FormEvent<HTMLFormElement>) => {
@@ -261,13 +261,13 @@ const Login = () => {
           </h1>
         </div>
 
-{/*         <button
+{         <button
           className="px-6 py-3 flex bg-[#5865f2] text-white rounded-lg shadow-lg hover:scale-110 transition-all duration-300 ease-in-out font-semibold items-center justify-between space-x-2 mt-4"
           onClick={() => oAuthLogin()}
         >
           <BsDiscord />
           <h1>Login with Discord</h1>
-        </button> */}
+        </button> }
       </div>
 
       {isPasswordReset && (

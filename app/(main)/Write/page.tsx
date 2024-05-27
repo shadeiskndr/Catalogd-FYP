@@ -7,6 +7,7 @@ import { ID, Query } from "appwrite";
 import { toast } from "react-hot-toast";
 import Image from "next/image";
 import placeholderImg from "@/public/imgs/imgPlaceholder.jpg"; // Adjust the path if necessary
+import { FaStar } from "react-icons/fa";
 
 type ReviewFormProps = {
   collection: string;
@@ -145,6 +146,13 @@ const WriteReview = () => {
     }
   };
 
+  const getRatingColor = (rating: number) => {
+    if (rating === 10) return 'text-green-400';
+    if (rating >= 7) return 'text-green-600';
+    if (rating >= 4) return 'text-yellow-400';
+    return 'text-red-500';
+  };
+
   return (
     <div className="p-6 bg-stone-950 text-gray-200">
       <div className="w-full max-w-2xl bg-gray-800 p-6 rounded-lg shadow-lg mx-auto mt-10">
@@ -180,9 +188,18 @@ const WriteReview = () => {
         </div>
         {selectedGame && (
           <form onSubmit={handleSubmit} className="bg-gray-700 p-4 rounded-md">
-            <h2 className="text-xl font-semibold mb-2">{selectedGame.name}</h2>
+            <div className="flex justify-center mb-4">
+              <Image
+                src={selectedGame.background_image || placeholderImg}
+                alt={selectedGame.name}
+                width={200}
+                height={100}
+                className="rounded"
+              />
+            </div>
+            <h2 className="text-xl font-semibold mb-2 text-center">{selectedGame.name}</h2>
             <div className="mb-4">
-              <label className="block mb-1">Rating (1-10):</label>
+              <label className="block mb-1">Rating:</label>
               <input
                 type="range"
                 value={rating}
@@ -193,7 +210,10 @@ const WriteReview = () => {
                 required
                 className="w-full"
               />
-              <div className="text-center mt-2">{rating}</div>
+              <div className="flex justify-center items-center mt-2 text-2xl">
+                <span className={`mr-2 ${getRatingColor(rating)}`}>{rating}</span>
+                <FaStar className={`ml-1 ${getRatingColor(rating)}`} />
+              </div>
             </div>
             <div className="mb-4">
               <label className="block mb-1">Review:</label>

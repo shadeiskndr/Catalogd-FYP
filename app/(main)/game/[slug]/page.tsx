@@ -10,6 +10,8 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { PacmanLoader } from "react-spinners";
 import { Query } from "appwrite";
+import { PencilIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 //game page
 
@@ -33,6 +35,8 @@ const GamePage = ({ params: { slug } }: GamePageProps) => {
   const [screenshots, setScreenshots] = useState<Screenshot | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loadingReviews, setLoadingReviews] = useState(true);
+
+  
 
   //function for getting game details
   useEffect(() => {
@@ -107,9 +111,15 @@ const GamePage = ({ params: { slug } }: GamePageProps) => {
           )}
           {/* Reviews Section */}
           <div className="p-6 bg-indigo-100/10 my-6">
-            <h1 className="text-lg md:text-xl lg:text-2xl text-gray-200 font-semibold mb-4">
-              Reviews
-            </h1>
+            <div className="flex justify-between items-center mb-4">
+              <h1 className="text-lg md:text-xl lg:text-2xl text-gray-200 font-semibold">
+                Reviews
+              </h1>
+              <Link href="/Write" className="flex items-center text-sm text-gray-200 hover:underline">
+                <PencilIcon className="h-5 w-5 mr-1" />
+                Add a Review
+              </Link>
+            </div>
             {loadingReviews ? (
               <PacmanLoader
                 className="flex mx-auto my-2"
