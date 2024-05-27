@@ -109,8 +109,8 @@ const Info = ({ game, screenshots }: InfoProps) => {
           Screenshots
         </h1>
         <div
-          className="grid grid-cols-1 md:grid-cols-2
-        drop-shadow-lg gap-4 h-80 overflow-y-scroll scrollbar-thin
+          className="grid grid-cols-1 md:grid-cols-3
+        drop-shadow-lg gap-4 h-80 md:h-auto md:max-h-100 overflow-y-scroll scrollbar-thin
         "
         >
           {screenshots?.map((screenshot) => (
