@@ -97,10 +97,10 @@ const SeachBar = () => {
       >
         <MagnifyingGlassIcon
           className="h-6 w-6
-         text-red-500"
+         text-blue-500"
         />
         <input
-          className="bg-transparent text-red-500
+          className="bg-transparent text-blue-500
             focus:outline-none "
           id="search"
           value={searchTerm}

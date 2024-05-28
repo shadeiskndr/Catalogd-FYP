@@ -129,7 +129,7 @@ const Login = () => {
   return (
     <div className="flex flex-shrink items-center justify-center">
       <div className="flex flex-col mx-auto items-center 
-      space-y-6 bg-red-100 p-8 rounded-3xl">
+      space-y-6 bg-blue-200 p-8 rounded-3xl">
         {/* Logo */}
         <div className="h-40 w-40 drop-shadow-xl">
           <Image

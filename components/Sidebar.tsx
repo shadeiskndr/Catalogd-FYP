@@ -74,7 +74,7 @@ const Sidebar = () => {
       <nav
         className={`z-50 absolute md:hidden bg-black/80 py-4 h-[80vh]
        transition-all duration-300 ease-in-out backdrop-blur-lg
-       border-r-2 border-red-500  rounded-r-3xl my-6 space-y-2
+       border-r-2 border-blue-500  rounded-r-3xl my-6 space-y-2
       ${isSidebarOpen ? "left-[-100%]" : "left-0"}`}
       >
         <div className="px-4">
@@ -129,7 +129,7 @@ const Sidebar = () => {
           >
             <h2>Built with </h2>
             <span>
-              <HeartIcon className="w-2 h-2 text-red-500" />
+              <HeartIcon className="w-2 h-2 text-blue-500" />
             </span>
             <h2>by Shahathir Iskandar</h2>
           </div>
@@ -182,7 +182,7 @@ const Sidebar = () => {
           <h2>Your</h2>
           <Link href="" target="_blank">
             <h1
-              className="text-gray-600 hover:text-red-500 transition
+              className="text-gray-600 hover:text-blue-500 transition
             duration-300 hover:scale-105 cursor-pointer"
             >
               Games
@@ -197,7 +197,7 @@ const Sidebar = () => {
           >
             <h2>Built with </h2>
             <span>
-              <HeartIcon className="w-2 h-2 text-red-500" />
+              <HeartIcon className="w-2 h-2 text-blue-500" />
             </span>
             <h2>by Shahathir Iskandar</h2>
           </div>
