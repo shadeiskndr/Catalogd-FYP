@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 import { Game } from "@/gameTypes";
 import { gameList } from "@/rawg";
-import { PacmanLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 //for getting upcoming games
 const Upcoming = () => {
   const [games, setGames] = useState<Game[] | null>(null);
@@ -48,7 +48,7 @@ const Upcoming = () => {
         )
       ) : (
         <div className="flex justify-center items-center">
-          <PacmanLoader color="#ffa600" size={20} loading={true} />
+          <BeatLoader color="#ffa600" size={20} loading={true} />
         </div>
       )}
     </div>

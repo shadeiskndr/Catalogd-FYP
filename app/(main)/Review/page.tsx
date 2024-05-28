@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { database, databaseId, reviewCol, userID } from "@/utils/appwrite";
+import { database, databaseId, reviewCol } from "@/utils/appwrite";
 import { Query } from "appwrite";
 import ReviewCard from "@/components/ReviewCard";
-import { PacmanLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 
 interface Review {
   user_id: string;
@@ -70,16 +70,17 @@ const ReviewPage = () => {
     <div className="space-y-4">
       <h1 className="text-gray-300 text-3xl font-bold">Recent Reviews</h1>
       <div className="flex flex-col justify-center items-center">
-        {loading && <PacmanLoader color="#ffa600" size={20} loading={true} />}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+        {loading && <BeatLoader color="#ffa600" size={20} loading={true} />}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 auto-rows-auto grid-auto-flow-dense">
           {reviews.map((review, index) => (
-            <ReviewCard
-              key={index}
-              userName={review.user_name}
-              gameName={review.game_name}
-              rating={review.rating}
-              reviewText={review.review}
-            />
+            <div key={index} className="break-inside-avoid">
+              <ReviewCard
+                userName={review.user_name}
+                gameName={review.game_name}
+                rating={review.rating}
+                reviewText={review.review}
+              />
+            </div>
           ))}
         </div>
         {hasMore && (

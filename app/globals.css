@@ -11,3 +11,12 @@
     @apply bg-stone-950;
   }
 }
+
+/* Add these styles for the grid layout */
+.grid-auto-flow-dense {
+  grid-auto-flow: dense;
+}
+
+.break-inside-avoid {
+  break-inside: avoid;
+}

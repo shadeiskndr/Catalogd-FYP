@@ -1,5 +1,5 @@
 import { Game } from "@/gameTypes";
-import { Screenshot, ScreenshotItem } from "@/rawg/gameScreenshots";
+import { ScreenshotItem } from "@/rawg/gameScreenshots";
 import Image from "next/image";
 import React from "react";
 import imgPlace from "../../public/imgs/imgPlaceholder.jpg";

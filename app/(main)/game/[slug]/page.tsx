@@ -8,7 +8,7 @@ import { Screenshot } from "@/rawg/gameScreenshots";
 import { database, databaseId, reviewCol } from "@/utils/appwrite";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { PacmanLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 import { Query } from "appwrite";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
@@ -102,7 +102,7 @@ const GamePage = ({ params: { slug } }: GamePageProps) => {
           {screenshots?.results ? (
             <Info game={game} screenshots={screenshots?.results!} />
           ) : (
-            <PacmanLoader
+            <BeatLoader
               className="flex mx-auto my-2"
               color="#ffa600"
               size={20}
@@ -121,7 +121,7 @@ const GamePage = ({ params: { slug } }: GamePageProps) => {
               </Link>
             </div>
             {loadingReviews ? (
-              <PacmanLoader
+              <BeatLoader
                 className="flex mx-auto my-2"
                 color="#ffa600"
                 size={20}
@@ -145,7 +145,7 @@ const GamePage = ({ params: { slug } }: GamePageProps) => {
           </div>
         </div>
       ) : (
-        <PacmanLoader
+        <BeatLoader
           className="flex mx-auto my-2"
           color="#ffa600"
           size={20}

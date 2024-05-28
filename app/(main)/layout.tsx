@@ -1,5 +1,5 @@
 "use client";
-import { account, getSessionData } from "@/utils/appwrite";
+import { getSessionData } from "@/utils/appwrite";
 import "../globals.css"
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";

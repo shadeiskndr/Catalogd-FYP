@@ -4,7 +4,7 @@ import Grid from "@/components/Grid";
 import { Game } from "@/gameTypes";
 import { gameList } from "@/rawg";
 import React, { useEffect, useState } from "react";
-import { PacmanLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 //new releases page
 interface loadGamesOptions {
   pageNo: number;
@@ -77,7 +77,7 @@ const NewR = () => {
           )
         ) : (
           <div>
-            <PacmanLoader color="#ffa600" size={20} loading={loading} />
+            <BeatLoader color="#ffa600" size={20} loading={loading} />
           </div>
         )}
       </div>

@@ -5,7 +5,7 @@ import { Game } from "@/gameTypes";
 import { genreGames } from "@/rawg/genreGames";
 import { GameDataType, genreList } from "@/rawg/genreList";
 import React, { useEffect, useState } from "react";
-import { PacmanLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 
 interface loadGamesOptions {
   pageNo: number;
@@ -89,7 +89,7 @@ const GenrePage = ({params: {slug}}: GenrePageProps) => {
       <h1 className="text-gray-300 text-3xl font-bold">{genre?.name!}</h1>
       ) : (
       <div>
-        <PacmanLoader color="#ffa600" size={20} loading={loading} />
+        <BeatLoader color="#ffa600" size={20} loading={loading} />
       </div>
       )}
       <div className="flex flex-col justify-center items-center">
@@ -118,7 +118,7 @@ const GenrePage = ({params: {slug}}: GenrePageProps) => {
           )
         ) : (
           <div>
-            <PacmanLoader color="#ffa600" size={20} loading={loading} />
+            <BeatLoader color="#ffa600" size={20} loading={loading} />
           </div>
         )}
       </div>

@@ -3,7 +3,7 @@ import GenreCards from "@/components/genres/GenreCards";
 
 import { GameDataType, genreList } from "@/rawg/genreList";
 import React, { useEffect, useState } from "react";
-import { PacmanLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 
 const Genre = () => {
   const [genre, setGenre] = useState<GameDataType[] | null>(null);
@@ -40,7 +40,7 @@ const Genre = () => {
           </div>
         ) : (
           <div className="flex justify-center items-center">
-            <PacmanLoader color="#ffa600" size={20} loading={true} />
+            <BeatLoader color="#ffa600" size={20} loading={true} />
           </div>
         )}
     </div>

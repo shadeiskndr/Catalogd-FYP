@@ -3,7 +3,7 @@ import { Game } from "@/gameTypes";
 import { gameList } from "@/rawg";
 import React, { useEffect, useState } from "react";
 import CarouselCard from "./CarouselCard";
-import { PacmanLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 // To do later, when doing ui/ux. use framer motion to animate the carousel
 
 const getSpotlightItems = (items: unknown[], length: number) => {
@@ -74,7 +74,7 @@ const Featured = () => {
         )
       ) : (
         <div className="flex justify-center items-center">
-          <PacmanLoader color="#ffa600" size={20} loading={true} />
+          <BeatLoader color="#ffa600" size={20} loading={true} />
         </div>
       )}
     </div>

@@ -7,7 +7,7 @@ import { GameAddedContext } from "@/utils/GameAddedContext";
 import { database, databaseId, mylibCol, userID } from "@/utils/appwrite";
 import { Query } from "appwrite";
 import React, { useContext, useEffect, useState } from "react";
-import { PacmanLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 
 const MyLib = () => {
   const [games, setGames] = useState<Game[]>([]);
@@ -88,7 +88,7 @@ const MyLib = () => {
       )}
       {loading && (
         <div className="flex justify-center items-center">
-          <PacmanLoader color="#ffa600" size={20} loading={true} />
+          <BeatLoader color="#ffa600" size={20} loading={true} />
         </div>
       )}
     </div>

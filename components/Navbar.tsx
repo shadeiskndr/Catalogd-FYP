@@ -1,12 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import logo from "../public/imgs/nekored.webp";
 import SeachBar from "./SeachBar";
 import { SidebarContext } from "@/utils/SidebarContext";
-import { account, avatar, getSessionData } from "@/utils/appwrite";
-import { AppwriteException } from "appwrite";
+import { account, getSessionData } from "@/utils/appwrite";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ImExit } from "react-icons/im";
