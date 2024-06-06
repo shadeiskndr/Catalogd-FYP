@@ -96,8 +96,8 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <span className="bg-gradient-to-r from-blue-600 via-blue-400
-      to-blue-600  blur-[1px] h-1"></span>
+      <span className="bg-gradient-to-r from-red-600 via-red-400
+      to-red-600  blur-[1px] h-1"></span>
     </nav>
   );
 };

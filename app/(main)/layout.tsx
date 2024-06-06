@@ -39,7 +39,7 @@ export default function MainLayout({
             <div className="h-screen flex flex-col">
               <Navbar />
               <div className=" flex overflow-hidden">
-                <div className="md:border-r-[2px] md:my-4 md:border-r-blue-600 w-auto">
+                <div className="md:border-r-[2px] md:my-4 md:border-r-red-600 w-auto">
                   {/* Sidebar */}
                   <Sidebar />
                 </div>
