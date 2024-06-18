@@ -17,4 +17,6 @@ Links: https://catalogd-fyp.vercel.app | https://catalogd-fyp.netlify.app
 - [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework for rapid UI development.
 - [React](https://react.dev/) - Used to create dynamic and responsive UI components.
 - [RAWG API](https://rawg.io/apidocs) - RAWG API serves as a data source for the vast catalog of video game information.
-- [Appwrite](https://appwrite.io/docs) - Beautifully simple, pixel-perfect icons.
+- [Appwrite](https://appwrite.io/docs) - Appwrite is a backend-as-a-service (BaaS) that helps developers build secure and scalable apps. Uses NoSQL database format to store data.
+
+Note if the web application is not working, it is probably because Appwrite or RAWG API are down.
