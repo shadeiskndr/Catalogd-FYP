@@ -10,6 +10,7 @@ import {
   HeartIcon,
   PencilIcon,
   BookOpenIcon,
+  CpuChipIcon,
 } from "@heroicons/react/24/solid";
 import { SidebarContext } from "@/utils/SidebarContext";
 import SeachBar from "./SeachBar";
@@ -68,6 +69,11 @@ const Sidebar = () => {
             <BookOpenIcon className="w-6 h-6" />
           </SideButton>
         </div>
+        <div className="">
+          <SideButton name="AI Recommender" path="https://ai-game-recommender.netlify.app">
+            <CpuChipIcon className="w-6 h-6" />
+          </SideButton>
+        </div>
       </nav>
 
       {/* mobile nav  */}
@@ -119,6 +125,11 @@ const Sidebar = () => {
           <div className="">
             <SideButton name="Reviews" path="/Review">
               <BookOpenIcon className="w-6 h-6" />
+            </SideButton>
+          </div>
+          <div className="">
+            <SideButton name="AI Recommender" path="https://ai-game-recommender.netlify.app">
+              <CpuChipIcon className="w-6 h-6" />
             </SideButton>
           </div>
         </div>
