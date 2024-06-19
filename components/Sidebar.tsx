@@ -11,6 +11,7 @@ import {
   PencilIcon,
   BookOpenIcon,
   CpuChipIcon,
+  ChatBubbleLeftRightIcon,
 } from "@heroicons/react/24/solid";
 import { SidebarContext } from "@/utils/SidebarContext";
 import SeachBar from "./SeachBar";
@@ -70,15 +71,21 @@ const Sidebar = () => {
           </SideButton>
         </div>
         <div className="">
-          <SideButton name="AI Recommender" path="https://ai-game-recommender.netlify.app">
+          <SideButton name="AI Recommender" path="/AIRec">
             <CpuChipIcon className="w-6 h-6" />
+          </SideButton>
+        </div>
+        <div className="">
+          <SideButton name="Chat Room" path="/Chat">
+            <ChatBubbleLeftRightIcon className="w-6 h-6" />
           </SideButton>
         </div>
       </nav>
 
       {/* mobile nav  */}
       <nav
-        className={`z-50 absolute md:hidden bg-black/80 py-4 h-[80vh]
+        className={`z-50 absolute md:hidden bg-black/80 py-4 h-[80vh] overflow-y-auto scrollbar-track-transparent
+                scrollbar-thumb-gray-600 scrollbar-thin
        transition-all duration-300 ease-in-out backdrop-blur-lg
        border-r-2 border-red-500  rounded-r-3xl my-6 space-y-2
       ${isSidebarOpen ? "left-[-100%]" : "left-0"}`}
@@ -128,10 +135,16 @@ const Sidebar = () => {
             </SideButton>
           </div>
           <div className="">
-            <SideButton name="AI Recommender" path="https://ai-game-recommender.netlify.app">
+            <SideButton name="AI Recommender" path="/AIRec">
               <CpuChipIcon className="w-6 h-6" />
             </SideButton>
           </div>
+          <div className="">
+            <SideButton name="Chat Room" path="/Chat">
+              <ChatBubbleLeftRightIcon className="w-6 h-6" />
+            </SideButton>
+          </div>
+
         </div>
         <div className=" text-center flex flex-col justify-center items-center space-y-2 pt-20">
           <div

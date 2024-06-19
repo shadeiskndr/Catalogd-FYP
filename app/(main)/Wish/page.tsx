@@ -65,7 +65,8 @@ const Wish = () => {
             {page > 1 && (
               <button
                 onClick={loadPreviousGames}
-                className="px-4 py-2 bg-blue-600 text-white rounded"
+                className="bg-red-600 p-2 px-4 rounded hover:scale-105 transition-transform
+                    duration-300 ease-in-out font-semibold text-gray-100"
                 disabled={loading}
               >
                 {loading ? "Loading..." : "Previous Page"}
@@ -74,7 +75,8 @@ const Wish = () => {
             {hasMore && (
               <button
                 onClick={loadMoreGames}
-                className="px-4 py-2 bg-blue-600 text-white rounded"
+                className="bg-red-600 p-2 px-4 rounded hover:scale-105 transition-transform
+                    duration-300 ease-in-out font-semibold text-gray-100"
                 disabled={loading}
               >
                 {loading ? "Loading..." : "Load More"}

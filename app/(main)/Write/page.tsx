@@ -154,9 +154,10 @@ const WriteReview = () => {
   };
 
   return (
-    <div className="p-6 bg-stone-950 text-gray-200">
+    <div className="space-y-4">
+      <h1 className="text-gray-300 text-3xl font-bold">Write Review</h1>
       <div className="w-full max-w-2xl bg-gray-800 p-6 rounded-lg shadow-lg mx-auto mt-10">
-        <h1 className="text-2xl font-bold mb-4 text-center">Review and Rate a Game</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center text-white">Review and Rate a Game</h1>
         <div className="mb-4">
           <input
             type="text"
@@ -166,7 +167,7 @@ const WriteReview = () => {
             className="w-full p-2 bg-gray-700 text-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
           />
           {searchedGames.length > 0 && (
-            <ul className="bg-gray-700 mt-2 rounded-md max-h-60 overflow-y-auto">
+            <ul className="bg-gray-700 mt-2 rounded-md max-h-60 overflow-y-auto text-white">
               {searchedGames.map((game) => (
                 <li
                   key={game.id}
@@ -197,9 +198,9 @@ const WriteReview = () => {
                 className="rounded"
               />
             </div>
-            <h2 className="text-xl font-semibold mb-2 text-center">{selectedGame.name}</h2>
+            <h2 className="text-xl font-semibold mb-2 text-center text-white">{selectedGame.name}</h2>
             <div className="mb-4">
-              <label className="block mb-1">Rating:</label>
+              <label className="block mb-1 text-white">Rating:</label>
               <input
                 type="range"
                 value={rating}
@@ -216,7 +217,7 @@ const WriteReview = () => {
               </div>
             </div>
             <div className="mb-4">
-              <label className="block mb-1">Review:</label>
+              <label className="block mb-1 text-white">Review:</label>
               <textarea
                 value={review}
                 onChange={handleReviewChange}

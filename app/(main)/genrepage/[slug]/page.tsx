@@ -100,7 +100,7 @@ const GenrePage = ({params: {slug}}: GenrePageProps) => {
               {hasNextPage && (
                 <div className="flex flex-col my-4 justify-center items-center">
                   <button
-                    className="bg-red-500 p-2 px-4 rounded hover:scale-105 transition-transform
+                    className="bg-red-600 p-2 px-4 rounded hover:scale-105 transition-transform
                     duration-300 ease-in-out font-semibold text-gray-100"
                     onClick={handleFetchNextPage}
                   >
